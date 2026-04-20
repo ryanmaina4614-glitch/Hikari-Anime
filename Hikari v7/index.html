@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hikari Anime</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<nav class="navbar">
+  <h1><span class="p">Hikari</span> <span class="y">Anime</span></h1>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="favorites.html">Favorites ⭐</a>
+    <a href="manga.html">Manga 📚</a>
+
+  </div>
+
+  <input id="search" placeholder="Search anime..." />
+
+  <button onclick="toggleLearningMode()">🇯🇵 Learning Mode</button>
+
+</nav>
+
+<header class="hero" id="hero">
+  <div class="hero-content">
+    <h2>Loading...</h2>
+  </div>
+</header>
+
+<section class="grid" id="grid"></section>
+
+<script src="app.js"></script>
+</body>
+</html>

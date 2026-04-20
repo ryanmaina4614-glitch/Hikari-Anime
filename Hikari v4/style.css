@@ -1,0 +1,306 @@
+:root {
+  --bg: #0f172a;
+  --bg2: #1e293b;
+  --card: rgba(255,255,255,0.06);
+  --text: white;
+  --accent: #ff4757;
+}
+
+body[data-theme="light"] {
+  --bg: #f5f5f5;
+  --bg2: #ffffff;
+  --card: rgba(0,0,0,0.06);
+  --text: #111;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+  background: linear-gradient(135deg, var(--bg), var(--bg2));
+  color: var(--text);
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.5);
+}
+
+/* HERO */
+.hero {
+  height: 380px;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 18px;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 10px;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: scale(1.08);
+}
+
+/* MODAL */
+#modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+#modal.show {
+  display: flex;
+}
+
+.modal-content {
+  width: 70%;
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* SKELETON */
+.skeleton-card {
+  background: var(--card);
+  padding: 10px;
+  border-radius: 12px;
+  animation: pulse 1.2s infinite;
+}
+
+.skeleton-image {
+  height: 220px;
+  background: rgba(255,255,255,0.1);
+}
+
+.skeleton-line {
+  height: 10px;
+  margin-top: 10px;
+  background: rgba(255,255,255,0.1);
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+@keyframes pulse {
+  50% { opacity: 0.5; }
+}
+
+/* GENRE SIDEBAR */
+#genreSidebar {
+  position: fixed;
+  left: 0;
+  top: 70px;
+  width: 160px;
+  padding: 10px;
+}
+ 
+/* =========================
+   NETFLIX HERO (FINAL FIX)
+========================= */
+
+.hero {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 0 0 20px 20px;
+}
+
+/* Background image */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+}
+
+/* Dark overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.92),
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.2)
+  );
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  padding: 70px 40px;
+}
+
+/* Animation */
+.hero-animate {
+  animation: heroFade 0.6s ease;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title */
+.hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+/* Meta */
+.hero-meta {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Description */
+.hero-desc {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+  max-width: 500px;
+}
+
+/* Buttons */
+.hero-buttons {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+}
+
+.hero-buttons button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.hero-buttons button:first-child {
+  background: white;
+  color: black;
+}
+
+.hero-buttons button:last-child {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+.hero-buttons button:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   GENRE SIDEBAR
+========================= */
+
+.genre-sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 180px;
+  height: 100%;
+  padding: 15px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(12px);
+  overflow-y: auto;
+  z-index: 50;
+}
+
+/* Genre title */
+.genre-sidebar h3 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Buttons */
+.genre-sidebar button {
+  display: block;
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transition: 0.2s;
+}
+
+.genre-sidebar button:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateX(4px);
+}
+
+.genre-sidebar button.active {
+  background: #ff4757;
+  color: white;
+}
+
+/* Push content away from sidebar */
+.grid,
+.hero {
+  margin-left: 200px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .genre-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .genre-sidebar button {
+    width: auto;
+    flex: 1;
+  }
+
+  .grid,
+  .hero {
+    margin-left: 0;
+  }
+}

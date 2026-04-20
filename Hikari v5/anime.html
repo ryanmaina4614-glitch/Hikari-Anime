@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Browse Anime | Hikari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<aside id="genreSidebar" class="genre-sidebar">
+  <h3>Genres</h3>
+  <div id="genreList"></div>
+</aside>
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="logo.png" />
+    <h1>Hikari</h1>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="anime.html">Anime</a>
+    <a href="manga.html">Manga</a>
+    <a href="favorites.html">Favorites ⭐</a>
+  </div>
+
+  <input id="search" placeholder="Search anime..." />
+
+  <button id="themeBtn">🌙</button>
+</nav>
+
+<main>
+  <section class="grid" id="grid"></section>
+</main>
+
+<div id="sentinel"></div>
+<div id="modal"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
